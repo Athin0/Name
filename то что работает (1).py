@@ -56,22 +56,6 @@ fig.colorbar(img, ax=ax)
 ax.set(title='Chromagram')
 
 
-#
-
-
-import numpy as np
-audio_data = r'C:\Users\arina\Downloads\Wolfgang Amadeus Mozart Классическая музыка для медитации - Divertimento No. 11 for oboe, 2 horns & strings in D major, K. 251 Andantino_(Inkompmusic.ru).wav'
-y, sr = librosa.load(audio_data,sr=sr)
-S = np.abs(librosa.stft(y, n_fft=4096))**2
-chroma = librosa.feature.chroma_stft(S=S, sr=sr)
-chroma
-import matplotlib.pyplot as plt
-fig, ax = plt.subplots()
-img = librosa.display.specshow(chroma, y_axis='chroma', x_axis='time', ax=ax)
-fig.colorbar(img, ax=ax)
-ax.set(title='Chromagram')
-
-
 
 
 
